@@ -25,8 +25,8 @@ function loadRouter(file: string): void {
 }
 
 // Sirve la carpeta 'tmp' como recurso estático
-const tmpPath = join(process.cwd(), "tmp");
-router.use("/tmp", expressStatic(tmpPath));
+const tmpPath = join(process.cwd(), "public");
+router.use("/public", expressStatic(tmpPath));
 
 readdirSync(PATH_ROUTES).filter((file) => loadRouter(file));
 

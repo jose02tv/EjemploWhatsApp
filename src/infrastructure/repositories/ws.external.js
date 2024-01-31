@@ -25,7 +25,7 @@ class WsTransporter extends whatsapp_web_js_1.Client {
         this.status = false;
         this.generateImage = (base64) => {
             try {
-                const tmpPath = (0, path_1.join)(process.cwd(), "tmp");
+                const tmpPath = (0, path_1.join)(process.cwd(), "public");
                 let qr_svg = (0, qr_image_1.image)(base64, { type: "svg", margin: 4 });
                 qr_svg.pipe(require("fs").createWriteStream(`${tmpPath}/qr.svg`));
                 console.log("⚡ QR generado en", tmpPath, "⚡");
